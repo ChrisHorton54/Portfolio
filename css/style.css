@@ -4,7 +4,9 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
-
+p{
+    font-size: 16px;
+}
 body, html{
     height: 100%;
 }
@@ -135,6 +137,12 @@ header > ul > li {
     margin-top: 100px;
 }
 
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /**************************/
 /*                        */
 /*   Bootstrap Rewrite    */
@@ -243,6 +251,9 @@ header > ul > li {
 }
 
 @media (max-width: 767px) {
+    p{
+        font-size: 14px;
+    }
     .nav.navbar-nav{
         background: rgba(36, 36, 36, 1) !important;
     }
@@ -254,69 +265,82 @@ header > ul > li {
     }
 }
 
-@-webkit-keyframes swing
-{
-    15%
-    {
-        -webkit-transform: translateX(10px);
-        transform: translateX(10px);
-    }
-    30%
-    {
-        -webkit-transform: translateX(-8px);
-       transform: translateX(-8px);
-    } 
-    50%
-    {
-        -webkit-transform: translateX(6px);
-        transform: translateX(6px);
-    }
-    65%
-    {
-        -webkit-transform: translateX(-4px);
-        transform: translateX(-4px);
-    }
-    80%
-    {
-        -webkit-transform: translateX(2px);
-        transform: translateX(2px);
-    }
-    100%
-    {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
+.port-content-image{
+    display: none;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+
+.port-content-image.active{
+    display:block;
+}
+
+.port-content-image.active-opacity{
+    opacity: 1;
+}
+.port-content-image img,
+.port-content-image .text-content {
+    width: 50%;
+    float: left;
+}
+
+.port-content-image img{
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.73);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.port-content-image .text-content{
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .port-content-image img,
+    .port-content-image .text-content {
+        width: 100%;
+        float: none;
     }
 }
-@keyframes swing
-{
-    15%
-    {
-        -webkit-transform: translateX(10px);
-        transform: translateX(10px);
-    }
-    30%
-    {
-        -webkit-transform: translateX(-8px);
-       transform: translateX(-8px);
-    } 
-    50%
-    {
-        -webkit-transform: translateX(6px);
-        transform: translateX(6px);
-    }
-    65%
-    {
-        -webkit-transform: translateX(-4px);
-        transform: translateX(-4px);
-    }
-    80%
-    {
-        -webkit-transform: translateX(2px);
-        transform: translateX(2px);
-    }
-    100%
-    {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
+
+.portfolio-thumbnails img{
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.73);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+}
+
+.social-media img,
+.social-media p{
+    float: left;
+}
+
+.social-media p{
+    padding: 15px;
+    color:#FFFFFF;
+}
+
+.notification-bar{
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px;
+    display:none;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+
+.notification-bar.active{
+    display:block;
+    opacity: 1;
 }

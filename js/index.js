@@ -62,3 +62,30 @@ $('.scroll-tag').click(function(){
     }, 1500);
     return false;
 });
+
+
+function togglePortfolio(portfolio){
+    if(!$("." + portfolio).hasClass("active")){
+        $(".port-content-image").removeClass("active-opacity");
+        
+        setTimeout(function(){
+            $(".port-content-image").removeClass("active");
+            $("." + portfolio).addClass("active");
+        }, 500);
+        
+        setTimeout(function(){
+            $("." + portfolio).addClass("active-opacity");
+        }, 550);
+    }
+}
+
+$(document).ready(function(){
+    if($(".notification-bar").hasClass("active")){        
+        setTimeout(function(){
+            $(".notification-bar").css("opacity","0");
+        }, 2000);
+        setTimeout(function(){
+            $(".notification-bar").removeClass("active");
+        }, 2500);
+    }
+});
